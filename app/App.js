@@ -4,6 +4,7 @@ import Header from "./component/Header"
 import PrayerScheduleCard from "./component/PrayerScheduleCard"
 
 const App = () => {
+  const date = new Date()
   const [shalatSchedule, setShalatSchedule] = useState(undefined)
 
   useEffect(() => {
@@ -34,7 +35,7 @@ const App = () => {
   return (
     <ScrollView style={styles.mainContainer}>
       <StatusBar backgroundColor={"rgb(239,81,83)"} />
-      <Header title={"Hello Rino!"} time={"15:31"} />
+      <Header title={"Hello Rino!"} time={`${date.getHours()}:${date.getMinutes()}`} />
       <View style={styles.prayerCardContainer}>
         <PrayerScheduleCard location={"Bandung"} prayers={shalatSchedule} />
       </View>
